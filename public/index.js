@@ -59,12 +59,15 @@ clearall.onclick = function () {
 invert.onclick = function () {
     input.value = -input.value;
 }
-input.oninput = function () {
-    change();
-}
-let change = function() {
-    if (operators.includes(input.value.slice(-2, -1))) {
+input.onkeyup = function () {
+    if (Object.values(operators).includes(input.value.slice(-2, -1)) && Object.values(operators).includes(input.value.slice(-1))) {
         input.value = input.value.slice(0, -2) + input.value.slice(-1);
     }
-};
+    if (!Object.values(operators).includes(input.value.slice(-1)) && !Object.values(numbers).includes(input.value.slice(-1))) {
+        input.value = input.value.slice(0, -1);
+    }
+    if (input.value.slice(-2) === '..') {
+        input.value = input.value.slice(0, -1);
+    }
+}
 
