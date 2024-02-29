@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 button {
-    @apply border border-black bg-white px-4 py-2 text-black hover:bg-black hover:text-white col-span-1 row-span-1;
+  @apply col-span-1 row-span-1 border border-black bg-white px-4 py-2 text-black duration-200 hover:bg-black hover:text-white active:scale-90;
 }
